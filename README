@@ -17,20 +17,68 @@ Menotti le agrega un "Mr. " al nombre del jugador y aumenta una cantidad de punt
 Bertolotti hace lo mismo que Menotti, solo que aumenta siempre 10 su habilidad
 Van Gaal no afecta a los jugadores, siguen jugando igual que siempre
 
-Indique cómo haría en la consola para decir que un jugador fue entrenado primero por Bielsa, luego por Menotti y finalmente por Van Gaal. No importa el resultado sino cómo es la invocación en el REPL.
+Indique cómo haría en la consola para decir que un jugador fue entrenado primero por Bielsa, luego por Menotti y 
+finalmente por Van Gaal. No importa el resultado sino cómo es la invocación en el REPL.
+
 Punto 3: Mejora (2 puntos)
-Sabemos que un jugador es bueno si tiene más habilidad que velocidad, o bien si es volante. Queremos saber si un técnico mejora a un equipo, esto se da si después de entrenar a todos los jugadores de un equipo tiene más jugadores buenos que antes de entrenarlos.
+Sabemos que un jugador es bueno si tiene más habilidad que velocidad, 
+o bien si es volante. Queremos saber si un técnico mejora a un equipo, esto se da si después 
+de entrenar a todos los jugadores de un equipo tiene más jugadores buenos que antes de entrenarlos.
 
 En este punto no puede utilizar recursividad.
 
 
 
 Punto 4: Es imparable (2 puntos)
-Queremos saber si un jugador es imparable. Esto se da si con el correr de los partidos va metiendo la misma cantidad de goles o más.
+Queremos saber si un jugador es imparable. Esto se da si con el correr de los partidos va metiendo la misma cantidad de goles
+o más.
+Por ejemplo un jugador que en el primer partido no metió goles, en el segundo metió 2, en el tercero metió 2 y 
+en el cuarto metió 4 es imparable.
+En el caso de un jugador que en el primer partido no metió goles, en el segundo hizo un gol y en el 
+tercero no metió goles, no es imparable.
+En este punto debe utilizar recursividad.
 
-Por ejemplo un jugador que en el primer partido no metió goles, en el segundo metió 2, en el tercero metió 2 y en el cuarto metió 4 es imparable.
 
-En el caso de un jugador que en el primer partido no metió goles, en el segundo hizo un gol y en el tercero no metió goles, no es imparable.
+
+
+=========================================Tema 2========================================
+Un importante y sudoroso personaje del fútbol nos ha pedido que modelemos los requerimientos para la importante liga 
+que tiene a su cargo. Sabemos que un jugador tiene nombre, una velocidad medida en km/h, una habilidad que va de 0 a 100, 
+el puesto en el que juega: “arquero”, “defensor”, “volante” o “delantero” y también se registran los partidos donde jugó, 
+del primero al último: en él se marca minutos jugados y goles convertidos. Si un jugador estuvo en el banco de suplentes 
+tendrá 0 minutos jugados.
+
+Punto 1: Equipos (3 puntos)
+En este punto no puede utilizar funciones auxiliares, solo composición y aplicación parcial. 
+No puede utilizar recursividad.
+
+Queremos saber cuántos jugadores de un equipo marcaron goles en todos los partidos. 
+Queremos saber si todos los jugadores de un equipo que tienen más de un mínimo de puntos de habilidad son volantes, 
+donde ese mínimo es configurable. 
+Ojo: si elijo que el mínimo sea 35, si hay 2 volantes que tienen 40 y 50 puntos de 
+habilidad y un delantero con 50 puntos de habilidad, la condición no se cumple: 
+todos los jugadores deben ser únicamente volantes.
+
+Punto 2: Técnicos (3 puntos)
+Presentamos ahora a los técnicos, que con sus tácticas modifican a los jugadores
+Gago hace que los volantes jueguen de defensores y los delanteros de volantes (el resto queda en su posición)
+Bilardo hace que jueguen un partido amistoso que termina 0 a 0 (hay que agregarlo al jugador que juega todo el partido) 
+y también aumenta 5 puntos su habilidad si Bilardo está nervioso, ó 10 si Bilardo está tranquilo
+Fatigatti hace lo mismo que Bilardo pero siempre está tranquilo
+Klopp no afecta a los jugadores, siguen jugando igual que siempre
+
+Indique cómo haría en la consola para decir que un jugador fue entrenado primero por Gago, luego por Bilardo y finalmente por Klopp. No importa el resultado sino cómo es la invocación en el REPL.
+Punto 3: Buena enseñanza (2 puntos)
+Sabemos que un jugador es bueno si tiene más habilidad que velocidad, o bien si es volante. Queremos saber si un jugador tiene una buena enseñanza, esto se da si después de que lo entrenan una serie de técnicos termina siendo un jugador bueno (no importa si antes ya lo era).
+
+En este punto no puede utilizar recursividad.
+
+
+
+Punto 4: Regularidad (2 puntos)
+Dado un jugador, queremos saber si perdió regularidad. Esto se da si con el correr de los partidos juega menos minutos.
+Por ejemplo, un jugador que en el primer partido jugó 10 minutos, y en el segundo 20 no perdió regularidad. Si juega 10 minutos en el segundo partido tampoco perdió regularidad.
+En cambio uno que jugó 90 minutos los primeros 3 partidos y luego jugó 80 minutos, perdió regularidad.
 
 En este punto debe utilizar recursividad.
 
