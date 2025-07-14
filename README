@@ -69,7 +69,9 @@ Klopp no afecta a los jugadores, siguen jugando igual que siempre
 
 Indique cómo haría en la consola para decir que un jugador fue entrenado primero por Gago, luego por Bilardo y finalmente por Klopp. No importa el resultado sino cómo es la invocación en el REPL.
 Punto 3: Buena enseñanza (2 puntos)
-Sabemos que un jugador es bueno si tiene más habilidad que velocidad, o bien si es volante. Queremos saber si un jugador tiene una buena enseñanza, esto se da si después de que lo entrenan una serie de técnicos termina siendo un jugador bueno (no importa si antes ya lo era).
+Sabemos que un jugador es bueno si tiene más habilidad que velocidad, o bien si es volante. 
+Queremos saber si un jugador tiene una buena enseñanza, esto se da si después de que lo entrenan una serie de técnicos 
+termina siendo un jugador bueno (no importa si antes ya lo era).
 
 En este punto no puede utilizar recursividad.
 
@@ -77,7 +79,8 @@ En este punto no puede utilizar recursividad.
 
 Punto 4: Regularidad (2 puntos)
 Dado un jugador, queremos saber si perdió regularidad. Esto se da si con el correr de los partidos juega menos minutos.
-Por ejemplo, un jugador que en el primer partido jugó 10 minutos, y en el segundo 20 no perdió regularidad. Si juega 10 minutos en el segundo partido tampoco perdió regularidad.
+Por ejemplo, un jugador que en el primer partido jugó 10 minutos, y en el segundo 20 no perdió regularidad. 
+Si juega 10 minutos en el segundo partido tampoco perdió regularidad.
 En cambio uno que jugó 90 minutos los primeros 3 partidos y luego jugó 80 minutos, perdió regularidad.
 
 En este punto debe utilizar recursividad.
