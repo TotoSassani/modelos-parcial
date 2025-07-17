@@ -169,5 +169,4 @@ superaObstaculo HoyoAgrandado dificultad = hoyoAgrandado dificultad
 
 
 
---NICO Y CARO SE VAN A CASAR , CARO ES HOMBRE 
---CARO{POLLA CARO = 9999CM}
+
