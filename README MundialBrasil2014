@@ -1,0 +1,77 @@
+Se viene el mundial y todo el mundo está pendiente de ello.
+¿Quién va a ganar? ¿Está todo arreglado para Argentina y Brasil en la final? ¿Que Cristiano es mejor? ¿Que Messi es el mejor? ¿Que el chino Garcé es mejor? ¿Y por qué trajo alfajores de fruta? Nada se sabe todavía.
+Para poder resolver los problemas que pueden ocurrir durante el mundial y manejar las estadísticas de los jugadores, se pidió que ayudemos mediante un programa que solucione los siguientes requisitos.
+
+
+
+Se sabe que se tiene modelados los jugadores y los equipos de la siguiente forma:
+Jugador: Nombre, edad, promedio de gol, habilidad (entre 0 y 99), valor de cansancio (0 - el más bajo - en adelante).
+Equipo: Nombre, grupo al que pertenece y una lista de los jugadores
+
+martin = CJugador "Martin" 26 0.0 50 35.0
+juan = CJugador "Juancho" 30 0.2 50 40.0
+maxi = CJugador "Maxi Lopez" 27 0.4 68 30.0
+
+jonathan = CJugador "Chueco" 20 1.5 80 99.0
+lean = CJugador "Hacha" 23 0.01 50 35.0
+brian = CJugador "Panadero" 21 5 80 15.0
+
+garcia = CJugador "Sargento" 30 1 80 13.0
+messi = CJugador "Pulga" 26 10 99 43.0
+aguero = CJugador "Aguero" 24 5 90 5.0
+
+equipo1 = ("Lo Que Vale Es El Intento", 'F', [martin, juan, maxi])
+losDeSiempre = ( "Los De Siempre", 'F', [jonathan, lean, brian])
+restoDelMundo = ("Resto del Mundo", 'A', [garcia, messi, aguero])
+
+
+
+
+
+
+Disponemos de esta función a modo de ayuda que, a partir de una lista y un criterio de ordenamiento, nos devuelve la versión equivalente a esa lista pero con los elementos ordenados por el criterio dado.  
+
+quickSort _ [] = [] 
+quickSort criterio (x:xs) = (quickSort criterio . filter (not . criterio x)) xs 
+++ [x] ++ 
+(quickSort criterio . filter (criterio x)) xs 
+
+
+Se pide resolver los siguientes ejercicios aplicando los temas vistos en clase tales como orden superior, recursividad, composición, aplicación parcial, listas por comprension cuando el ejercicio lo requiera. También usar abstracciones.
+
+1) Todos saben que un equipo lleva muchos jugadores al mundial pero, ¿Quiénes son las figuras de cada equipo? Dado un equipo específico queremos saber quiénes son figura, para lo que se requiere tener una habilidad mayor a 75 y promedio de gol mayor a 0.
+
+2) Muchas veces pasa que a un jugador no le alcanza con que solamente aparezca en la tele y se hable de él cuando juega al fútbol, sino que también quiere estar en los programas de Rial y Fantino, ya que el mejor amigo le robó a la esposa, porque empezó a salir con Karina o cualquier otra razón.
+Crear la función tieneFarandulero, la cual verifica si un determinado equipo cuenta entre sus integrantes algún jugador farandulero. 
+Los jugadores que son faranduleros están dados por la siguiente función::
+jugadoresFaranduleros = ["Maxi Lopez", "Icardi", "Aguero", "Caniggia", "Demichelis"]
+
+3) Naturalmente, en todo mundial existe un álbum de figuritas de la compañía Panini. Esta vez se nos pidió que dados una serie de equipos y un grupo específico (A,B,C,D,E o F), le digamos los nombres de los jugadores que tendrían que ser las figuritas difíciles (y hasta a veces brillantes).
+Para cumplir la condición de ser difícil, el jugador tiene que cumplir simultáneamente:
+Ser figura
+Ser joven (menor a 27 años)
+No ser farandulero.
+
+4) Se conoce que tras un partido del mundial, los jugadores se cansan debido al extenso calendario que tuvieron en el año y a que muchos ya están prontos a su retiro. Definir la función jugarPartido, la cual dado un equpo modifique a sus jugadores según los siguientes criterios:
+Si el jugador no es farandulero, es joven y figura, su cansancio pasa a ser 50.
+Para el resto de los jugadores jóvenes, su cansancio aumenta un 10%.
+Si el jugador no es joven y es figura del equipo se incrementa en 20 unidades su cansancio.
+En cualquier otro caso, el cansancio se duplica.
+
+5) Empezó el mundial y los partidos se empiezan a jugar. ¿Cómo saber quién gana en cada partido? Cuando se enfrentan 2 equipos, se seleccionan los primeros 11 jugadores (por equipo) que menos cansados están y se suma su promedio de gol. El que sume un mejor promedio gana el partido. 
+Se pide entonces, dados dos equipos, devolver al ganador del partido, con sus jugadores modificados por haber jugado el partido. 
+
+6) Sabiendo ya cómo se decide el ganador de un partido, ahora queremos saber, a partir de un grupo de equipos, qué equipo se consagrará campeón del torneo.
+¿Cómo se juegan los partidos? 
+El primero juega contra el segundo → Ganador1
+Ganador1 juega contra tercer equipo → Ganador2
+Ganador2 juega contra cuarto equipo → Ganador3
+….
+Y así hasta que el ganador del último partido se consagra campeón.
+Dar 2 resoluciones diferentes al ejercicio
+
+7) Los días pasaron, las vuvuzelas se escucharon, una nueva Larissa Riquelme se hizo conocida, y el pulpo Paul volvió a acertar en los resultados. Después de un gran mundial se quiere saber quién va a ser elegido como el mejor de todos para entregarle el premio y ser reconocido en todo el mundo como “EL GROSO”. Para ello se ingresa una lista de equipos, y del equipo elegido ganador (el campeón), se quiere saber el nombre del primer jugador que cumpla la condición de ser figura (en todo equipo hay 1 por lo menos).
+
+Teórico: 
+1) ¿Dónde usaron funciones de orden superior? ¿Por qué? ¿Crearon alguna función de orden superior?
+2) ¿Qué pasaría si un equipo tuviera una lista infinita de jugadores? 
