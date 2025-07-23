@@ -1,0 +1,98 @@
+Los Ladrones Lambda
+
+
+
+Debe implementarse una solución que resuelva lo planteado a continuación haciendo uso de las herramientas del paradigma.
+
+No está permitido usar recursividad en ningún punto a menos que se indique lo contrario en el mismo.
+
+Debe haber al menos un uso de composición no trivial en la resolución del parcial.
+
+
+Unos desconocidos ladrones enmascarados, que se hacen llamar Los Ladrones Lambda, se infiltraron en los cursos de PdeP. 
+Ellos están interesados en ciertos tesoros que quedaron por la facultad. Nos contactaron para que modelemos este dominio utilizando
+ las herramientas del paradigma funcional (haciéndole honor a su nombre).
+
+
+Parte 1: Tesoros valiosos
+
+Los codiciados tesoros tienen un año de descubrimiento 
+(en otras palabras, el año en que se registró su existencia por primera vez) y un precio en pesos. Queremos saber:
+
+de qué tipo es cierto tesoro, los tipos que conocemos son:
+de lujo: si su precio es mayor a $1000 o si su antigüedad es mayor a 200 años. 
+La antigüedad del tesoro puede medirse como la diferencia entre el año actual y su año de descubrimiento.
+tela sucia: si vale menos de $50 y no es de lujo.
+estándar: si no es de ningún otro tipo.
+el valor de un tesoro; se calcula como su precio + 2 * su antigüedad.
+
+Parte 2: Cerraduras y herramientas
+
+Nuestros protagonistas practican sus habilidades abriendo intrincadas cerraduras. Cada cerradura tiene una clave compuesta de letras, 
+números o cualquier otro tipo de carácter.
+
+Decimos que una cerradura está abierta cuando su clave está vacía, es decir, no posee ningún carácter.
+
+Queremos modelar el efecto de usar una herramienta en una cerradura, lo cual va a darnos una cerradura con una clave nueva. 
+Cómo será esa nueva clave dependerá de la herramienta usada[1]. Tener en cuenta que esto son sólo algunos ejemplos de herramientas, 
+y que podrían haber más:
+
+el martillo, que afloja la cerradura haciéndole perder los primeros 3 caracteres a su clave.
+Por ejemplo, si usamos un martillo en una cerradura de clave “contenedor”, obtendremos una cerradura de clave “tenedor”.
+
+la llave maestra, que abre cualquier cerradura, dejando su clave vacía.
+las ganzúas, todas ellas eliminan el primer carácter de la clave y además cada tipo de ganzúa elimina ciertos caracteres de la clave:
+la ganzúa gancho elimina todas las letras mayúsculas de la clave de una cerradura.
+la ganzúa rastrillo elimina todos los números de la clave de una cerradura.
+la ganzúa rombo, que viene con una inscripción, y elimina de la clave de una cerradura todos 
+los caracteres contenidos en esa inscripción.
+Por ejemplo, si usamos una ganzúa rombo con la inscripción “abc123” en una cerradura con clave 
+“El abecedario”,nos quedaría una cerradura on clave
+
+“l eedrio”.
+
+el tensor, que dada una cerradura, convierte todas las minúsculas de su clave en mayúsculas.
+Por ejemplo, si usamos un tensor en una cerradura de clave “h01a” obtenemos una cerradura con clave “H01A”.
+
+el socotroco, que es un artilugio compuesto por 2 herramientas, y usarlo es equivalente a usar una de las herramientas y luego la otra.
+Por ejemplo: un socotroco hecho con un tensor y una ganzúa gancho primero convertiría todas las minúsculas de la clave de la cerradura 
+en mayúsculas y luego eliminaría el primer carácter y todas las mayúsculas de la clave de la cerradura.
+
+
+Parte 3: Los Ladrones Lambda (propiamente dichos)
+
+Por fin tenemos a nuestros inigualables protagonistas: los ladrones. De un ladrón sabemos su nombre, 
+las herramientas que lleva encima y los tesoros que robó.
+
+Al enfrentarse a un cofre (que tiene una cerradura y un tesoro adentro), el ladrón utiliza en orden las herramientas que lleva. 
+Sabiendo esto, queremos modelar:
+
+si un ladrón es legendario, lo cual se cumple si tiene más de 100 de experiencia y todos los tesoros que robó son de lujo. 
+La experiencia de un ladrón se define como la sumatoria de los valores de sus tesoros.
+
+que un ladrón robe un cofre. Esto hace que consuma sus herramientas en orden hasta que su cerradura quede abierta. Una vez que se abre, 
+el ladrón agrega el tesoro a su lista y se queda con las herramientas que no utilizó. Si utilizó todas sus herramientas y no pudo abrir 
+la cerradura, queda sin herramientas y el tesoro no se agrega. Este punto puede ser resuelto utilizando recursividad.
+
+Ejemplo 1: Manu es un ladrón con un martillo, una ganzúa gancho y una ganzúa rastrillo, y quiere robar un tesoro cuya cerradura 
+tiene la clave “qwERTY”. Al usar el martillo, la clave pasa a ser “RTY”. Al usar la ganzúa gancho, la cerradura queda abierta. 
+De esta forma, Manu queda sólo con la ganzúa rastrillo y agrega el tesoro a su lista.
+
+Ejemplo 2: Lucas es un ladrón con un tensor y una ganzúa rombo con la inscripción “SWD”; quiere robar un tesoro cuya cerradura tiene la clave “password”. Al usar el tensor, la clave pasa a ser “PASSWORD”, al usar la ganzúa rombo, pasa a ser “AOR”. Por lo tanto, no pudo robar el tesoro y se queda sin herramientas.
+
+un atraco llevado a cabo por un ladrón a un conjunto de cofres. Para llevar a cabo el atraco, 
+el ladrón va a ir uno por uno robando todos los cofres.
+escribir en un comentario el código para hacer lo siguiente (justificar por qué en caso de que sea imposible):
+I. un atraco en el que aparezca una lista infinita en algún lado y que por eso la expresión no termine.
+
+II. un atraco en el que aparezca una lista infinita en algún lado pero que aún así evaluar esa expresión termine.
+
+III. un atraco en el que los ladrones intancan coger a nico (Sandovaal, querico)
+
+Nota: la lista infinita puede ser cualquiera involucrada, ya sea la lista de cofres en el atraco, la lista de herramientas del ladrón o la clave de la cerradura (que probablemente hayan modelado como un String, que es [Char]).
+
+
+[1] Les dejamos importadas varias funciones que les serán útiles para definir las herramientas: 
+isUpper (dado un carácter, indica si es mayúscula), 
+isDigit (dado un carácter, indica si es dígito) y 
+toUpper (transforma un carácter en minúscula a su equivalente en mayúscula).
