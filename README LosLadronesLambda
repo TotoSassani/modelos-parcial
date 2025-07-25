@@ -87,9 +87,8 @@ I. un atraco en el que aparezca una lista infinita en algún lado y que por eso 
 
 II. un atraco en el que aparezca una lista infinita en algún lado pero que aún así evaluar esa expresión termine.
 
-III. un atraco en el que los ladrones intancan coger a nico (Sandovaal, querico)
-
-Nota: la lista infinita puede ser cualquiera involucrada, ya sea la lista de cofres en el atraco, la lista de herramientas del ladrón o la clave de la cerradura (que probablemente hayan modelado como un String, que es [Char]).
+Nota: la lista infinita puede ser cualquiera involucrada, ya sea la lista de cofres en el atraco, 
+la lista de herramientas del ladrón o la clave de la cerradura (que probablemente hayan modelado como un String, que es [Char]).
 
 
 [1] Les dejamos importadas varias funciones que les serán útiles para definir las herramientas: 
