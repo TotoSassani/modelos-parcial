@@ -46,25 +46,25 @@ tonificar :: Rutina
 tonificar persona = persona{tonificacion = tonificacion persona + 1}
 
 
-hacerEjercicoConRecu :: Persona-> Float->Float ->[Rutina] -> Persona
-hacerEjercicoConRecu persona _ _ [] = persona
-hacerEjercicoConRecu persona resto minutos [ejercicio] = ejercicio resto minutos persona
-hacerEjercicoConRecu persona resto minutos (x:xs:xss) = x resto minutos persona : hacerEjercicoConRecu (xs: xss) resto minutos persona
+-- hacerEjercicoConRecu :: Persona-> Float->Float ->[Rutina] -> Persona
+-- hacerEjercicoConRecu persona _ _ [] = persona
+-- hacerEjercicoConRecu persona resto minutos [ejercicio] = ejercicio resto minutos persona
+-- hacerEjercicoConRecu persona resto minutos (x:xs:xss) = x resto minutos persona : hacerEjercicoConRecu (xs: xss) resto minutos persona
 
-hacerEjercicoConFold :: [Rutina] -> Persona-> Float-> Float ->Persona
-hacerEjercicoConFold ejercicios persona resto minutos  = foldl (\p rutina -> rutina resto minutos p) persona ejercicios
+-- hacerEjercicoConFold :: [Rutina] -> Persona-> Float-> Float ->Persona
+-- hacerEjercicoConFold ejercicios persona resto minutos  = foldl (\p rutina -> rutina resto minutos p) persona ejercicios
 
 restarKilos :: Persona -> Persona -> Float
 restarKilos personaDespues personaAntes = peso personaAntes - peso personaDespues
 
-kilosPerdidos :: Persona ->Float->Float ->[Rutina] -> Float
-kilosPerdidos persona resto minutos ejercicios = restarKilos (hacerEjercicoConRecu persona resto minutos ejercicios) persona
+-- kilosPerdidos :: Persona ->Float->Float ->[Rutina] -> Float
+-- kilosPerdidos persona resto minutos ejercicios = restarKilos (hacerEjercicoConRecu persona resto minutos ejercicios) persona
 
-tonificacionResta :: Persona -> Persona -> Float
-tonificacionResta personaDespues personaAntes = tonificacion personaDespues - tonificacion personaAntes
+-- tonificacionResta :: Persona -> Persona -> Float
+-- tonificacionResta personaDespues personaAntes = tonificacion personaDespues - tonificacion personaAntes
 
-tonificacionGanado ::Persona ->Float->Float ->[Rutina] -> Float
-tonificacionGanado persona resto minutos ejercicios = tonificacionResta (hacerEjercicoConRecu persona resto minutos ejercicios) persona
+-- tonificacionGanado ::Persona ->Float->Float ->[Rutina] -> Float
+-- tonificacionGanado persona resto minutos ejercicios = tonificacionResta (hacerEjercicoConRecu persona resto minutos ejercicios) persona
 
 --Loma Montero
 
