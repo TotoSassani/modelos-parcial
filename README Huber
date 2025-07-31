@@ -26,7 +26,8 @@ filtre los choferes que toman ese viaje. Si ningún chofer está interesado, no 
 considerar el chofer que menos viaje tenga. Si hay más de un chofer elegir cualquiera.
 efectuar el viaje: esto debe incorporar el viaje a la lista de viajes del chofer. ¿Cómo logra representar este cambio de estado?
 (1 punto) Al infinito y más allá
-Modelar al chofer “Nito Infy”, su auto tiene 70.000 kms., que el 11/03/2017 hizo infinitos viajes de $ 50 con Lucas y toma cualquier viaje donde el cliente tenga al menos 3 letras. Puede ayudarse con esta función:
+Modelar al chofer “Nito Infy”, su auto tiene 70.000 kms., que el 11/03/2017 hizo infinitos viajes de $ 50 con Lucas 
+y toma cualquier viaje donde el cliente tenga al menos 3 letras. Puede ayudarse con esta función:
 
 repetirViaje viaje = viaje : repetirViaje viaje
 
