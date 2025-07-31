@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use last" #-}
-{-# LANGUAGE NumDecimals #-}
 {-# HLINT ignore "Eta reduce" #-}
 {-# HLINT ignore "Use foldl" #-}
+{-# HLINT ignore "Redundant bracket" #-}
 import Data.List
 
 data Ciudadano = Ciudadano {
@@ -79,7 +79,7 @@ gobiernoA = Gobierno { anios= [1999 .. 2003], medidas = [impuestoGanancias 30000
 gobiernoB = Gobierno{anios = [2004 .. 2008], medidas = [impuestoGanancias 40000, negociarSueldoProfesion 30 "profesores", negociarSueldoProfesion 40 "camioneros"]}
 
 gobernarUnAnio' :: Gobierno -> Ciudad -> Ciudad 
-gobernarUnAnio' gobierno ciudad = foldl (\ciudadanos medidas-> map medidas ciudad) ciudad (medidas gobierno) 
+gobernarUnAnio' gobierno ciudad = foldl (\ciudadanos medidas-> (map medidas) ciudad) ciudad (medidas gobierno) 
 
 gobernarUnAnio :: Gobierno -> Ciudad -> Ciudad 
 gobernarUnAnio gobierno ciudad = map (aplicarMedidas (medidas gobierno)) ciudad

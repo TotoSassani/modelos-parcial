@@ -66,7 +66,7 @@ restarKilos personaDespues personaAntes = peso personaAntes - peso personaDespue
 -- tonificacionGanado ::Persona ->Float->Float ->[Rutina] -> Float
 -- tonificacionGanado persona resto minutos ejercicios = tonificacionResta (hacerEjercicoConRecu persona resto minutos ejercicios) persona
 
---Loma Montero
+
 
 
 
