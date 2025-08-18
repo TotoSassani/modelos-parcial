@@ -82,4 +82,8 @@ gongNeng arg1 arg2 arg3 =
 
 -- arg1= Number => arg3 = Number ... arg2= Number -> Bool 
 
+compararString :: String -> String -> Bool
+compararString a b = a > b
 
+probarLista :: Float -> [Float]-> [Float]
+probarLista 3 [4, 5] = [3] ++ [4, 5]

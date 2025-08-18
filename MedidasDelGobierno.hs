@@ -79,7 +79,7 @@ gobiernoA = Gobierno { anios= [1999 .. 2003], medidas = [impuestoGanancias 30000
 gobiernoB = Gobierno{anios = [2004 .. 2008], medidas = [impuestoGanancias 40000, negociarSueldoProfesion 30 "profesores", negociarSueldoProfesion 40 "camioneros"]}
 
 gobernarUnAnio' :: Gobierno -> Ciudad -> Ciudad 
-gobernarUnAnio' gobierno ciudad = foldl (\ciudadanos medidas-> (map medidas) ciudad) ciudad (medidas gobierno) 
+gobernarUnAnio' gobierno ciudad = foldl (\ciudadanos medidas-> (map medidas) ciudadanos) ciudad (medidas gobierno) 
 
 gobernarUnAnio :: Gobierno -> Ciudad -> Ciudad 
 gobernarUnAnio gobierno ciudad = map (aplicarMedidas (medidas gobierno)) ciudad
@@ -91,7 +91,9 @@ aplicarMedidas (x:xs) ciudadano = aplicarMedidas xs (x ciudadano)
 
 
 gobernarPeriodoCompleto :: Gobierno -> Ciudad -> Ciudad
-gobernarPeriodoCompleto gobierno ciudad = iterate (gobernarUnAnio gobierno) ciudad !! length (anios gobierno)
+gobernarPeriodoCompleto gobierno ciudad = iterate (gobernarUnAnio gobierno)ciudad  !! length (anios gobierno)
+
+
 -- o con recu 
 
 distribuyóRiqueza :: Gobierno -> Ciudad -> Bool

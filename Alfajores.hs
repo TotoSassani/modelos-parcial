@@ -88,7 +88,7 @@ toto = Clientes{
     plataParaGastar = 100,
     alfajoresComprados = [],
     paraGustosLosColores = \alfajor -> isInfixOf "premium" (nombre alfajor)  && (0.15 <= coeficienteDulzor alfajor)
-}
+} 
 
 dante = Clientes{
     nombreDelCliente = "Dante",
