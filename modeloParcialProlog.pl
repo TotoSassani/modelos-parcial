@@ -22,3 +22,8 @@ vistas(20, 12000).
 vistas(21, 12000).
 vistas(22, 12000).
 vistas(23, 12000).
+
+descubrimiento(a1, pulpo, caracteristicas(8, caracteristicaEspecial(luminiscencia), _, _),3400,07,observado).
+descubirmiento(a2, pulpo, caracteristicas(8, _, _, color(azul)), 3150, 08, observado).
+descubrimiento(b1, estrella, caracteristicas(5, caracteristicaEspecial(culona), _, color(naranja)), 3400, 12, observado).
+descubrimiento(c1, pepinoDeMar, caracteristicas(_, _, _, color(violeta)), 1900, 14, observado).
